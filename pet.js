@@ -12,8 +12,12 @@ class Pet {
     this.species = _species
     this.breed = _breed
   }
-  padrone() {
-    console.log('ciao')
+  padrone(anotherPet) {
+    if (this.ownerName === anotherPet.ownerName) {
+      return true
+    } else {
+      return false
+    }
   }
 }
 
@@ -39,7 +43,7 @@ form.addEventListener('submit', function (e) {
 
   console.log('Lista creata', newListPet)
   petList.push(newListPet)
-  nomePet.value = ''
+  nomePet.value = '' //svuota l'input field alla fine
   ownerPet.value = ''
   speciesPet.value = ''
   breedPet.value = ''
